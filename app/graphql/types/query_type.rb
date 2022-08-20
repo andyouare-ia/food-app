@@ -18,5 +18,11 @@ module Types
     def all_food
       Food.all
     end
+
+    field :all_nutrition, [Types::NutritionType], null: false, description: 'Get all the nutrition values for a food'
+    def all_nutrition
+      Nutrition.all
+    end
+
   end
 end

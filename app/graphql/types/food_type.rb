@@ -6,5 +6,7 @@ module Types
     field :image, String, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    # to query food and get the nutrition fact as well
+    field :nutrition, Types::NutritionType, null: true
   end
 end
