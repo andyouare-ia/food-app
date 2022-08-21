@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Food.delete_all
+Nutrition.delete_all
+
+puts "DB deleted"
+
 spaghetti = Food.create!(
   name: 'Spaghetti',
   place_of_origin: 'Italy',
@@ -22,6 +27,12 @@ tortilla_de_patatas = Food.create!(
   name: 'Tortilla de patatas',
   place_of_origin: 'Spain',
   image: 'https://www.not-a-link.com/tortilla-de-patatas.png',
+)
+
+pimientos_del_padron = Food.create!(
+  name: 'Pimientos del Padron',
+  place_of_origin: 'Spain',
+  image: 'https://www.not-a-link.com/pimientos-del-padron.png',
 )
 
 Nutrition.create!(
@@ -66,6 +77,26 @@ Nutrition.create!(
 
 Nutrition.create!(
   food_id: tortilla_de_patatas.id,
+  serving_size: '100 g',
+  calories: '149',
+  total_fat: '9.6 g',
+  trans_fat: '0 g',
+  saturated_fat: '2.5 g',
+  cholesterol: '0 mg',
+  sodium: '1400 mg',
+  potassium: '0 mg',
+  total_carbohydrate: '9.4 g',
+  dietary_fiber: '0 g',
+  sugars: '0 g',
+  protein: '5.5 g',
+  vitamin_a: '0%',
+  vitamin_c: '0%',
+  calcium: '0%',
+  iron: '0%',
+)
+
+Nutrition.create!(
+  food_id: pimientos_del_padron.id,
   serving_size: '100 g',
   calories: '149',
   total_fat: '9.6 g',
